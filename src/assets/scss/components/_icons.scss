@@ -1,0 +1,48 @@
+/* Icon
+   ========================================================================== */
+
+.icon {
+  display: inline-block;
+  fill: currentColor;
+  height: .32rem;
+  stroke: currentColor;
+  stroke-width: 0;
+  vertical-align: middle;
+  width: .32rem;
+}
+
+.icon-nav-open {
+  height: .2rem;
+  width: .2rem;
+}
+
+.icon-nav-close {
+  height: .14rem;
+  width: .2rem;
+}
+
+.icon-search {
+  height: .16rem;
+  width: .16rem;
+}
+
+.icon-flag {
+  display: inline-block;
+  height: .12rem;
+  width: .18rem;
+
+  &.flag-nl {
+    background: url(/assets/images/flag-nl.svg) center no-repeat;
+    background-size: cover;
+  }
+
+  &.flag-en {
+    background: url(/assets/images/flag-en.svg) center no-repeat;
+    background-size: cover;
+  }
+}
+
+.icon-download {
+  width: .18rem;
+  height: .18rem;
+}

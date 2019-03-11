@@ -1,0 +1,176 @@
+/* Form
+   ========================================================================== */
+
+.form-group {
+  display: block;
+  margin-bottom: $gap-s*1.5;
+}
+
+.form-label {
+  color: $c-theme-black;
+  display: block;
+  font-size: .12rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: .12rem;
+  text-transform: uppercase;
+
+  &.required {
+    &::after {
+      color: $c-theme-danger;
+      content: "*";
+      display: inline-block;
+      font-size: .12rem;
+      margin-left: .05rem;
+    }
+  }
+}
+
+.form-control-wrap {
+  position: relative;
+}
+
+.form-control {
+  -webkit-appearance: none;
+  background-clip: padding-box;
+  background-color: rgba(0, 0, 0, .03);
+  border: .01rem solid rgba(0, 0, 0, .1);
+  border-radius: .04rem;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: $c-font-base;
+  display: block;
+  font-size: .16rem;
+  height: $base-height;
+  padding: ($gap-s/2) ($gap-s);
+  width: 100%;
+
+  &:focus {
+    border-color: $c-theme-primary;
+    outline: none;
+  }
+
+  &.rounded {
+    border-radius: .5rem;
+  }
+
+  &--small {
+    height: $small-height;
+  }
+
+  &.is-invalid {
+    border-color: $c-theme-danger;
+  }
+
+  @include placeholder {
+    color: $c-placeholder;
+    opacity: initial; /* hack for firefox */
+  }
+}
+
+.form-error-msg {
+  color: $c-theme-danger;
+  display: block;
+  font-size: .14rem;
+  margin-top: .08rem;
+  margin-bottom: .05rem;
+}
+
+.form-check {
+  display: flex;
+  padding-bottom: .12rem;
+  padding-top: .12rem;
+  align-items: flex-start;
+
+  &.active {
+    .form-check-label {
+      font-weight: 700;
+    }
+  }
+
+  &.disabled {
+    opacity: .5;
+
+    &:hover {
+      cursor: default;
+    }
+  }
+}
+
+.form-check-input {
+  display: inline-flex;
+  margin-right: $gap-l;
+  position: relative;
+  flex: 0 0 auto;
+  height: .2rem;
+
+  input {
+    &.hide-input {
+      @extend .hide-visually;
+
+      &:checked {
+        & + label {
+          &::before {
+            display: block;
+          }
+        }
+      }
+    }
+
+    &[type="checkbox"] {
+      &:checked {
+        & + label {
+          border-color: $c-theme-primary;
+          background-color: $c-theme-primary;
+        }
+      }
+
+      & + label {
+        &::before {
+          content: '';
+          display: none;
+          background-color: transparent;
+          border-bottom: .02rem solid  $c-theme-white;
+          border-left: .02rem solid $c-theme-white;
+          height: .04rem;
+          margin-bottom: .02rem;
+          transform: rotate(-45deg);
+          width: .1rem;
+          z-index: 6;
+          position: relative;
+        }
+      }
+    }
+  }
+
+  label {
+    align-items: center;
+    background-color: $c-theme-white;
+    border: .02rem solid rgba(0, 0, 0, .54);
+    display: inline-flex;
+    flex: 0 0 auto;
+    height: .16rem;
+    justify-content: center;
+    margin: 0;
+    width: .16rem;
+    border-radius: .02rem;
+    position: relative;
+    margin-top: auto;
+    box-sizing: border-box;
+    transition: background-color .25s cubic-bezier(.71, -.46, .29, 1.46), border-color .25s cubic-bezier(.71, -.46, .29, 1.46);
+  }
+}
+
+.form-check-label {
+  display: block;
+  line-height: .2rem;
+  margin-bottom: 0;
+  color: $c-font-base;
+  user-select: none;
+}
+
+@include media('tablet') {
+  .form-check-label {
+    font-size: .18rem;
+  }
+}

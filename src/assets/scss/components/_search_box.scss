@@ -1,0 +1,52 @@
+.search-box {
+  background: $c-theme-white;
+  border-radius: .24rem;
+
+  .form-control {
+    border-radius: .24rem;
+    padding: .08rem .42rem .08rem .16rem;
+  }
+
+  .search-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: $base-height;
+    display: flex;
+    width: .42rem;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+
+    .icon {
+      color: rgba(0, 0, 0, .54);
+    }
+
+    button {
+      border: none;
+      outline: none;
+      background: transparent;
+      padding: 0;
+      margin: 0 .02rem 0 0;
+
+      &:hover {
+        cursor: pointer;
+
+        .icon {
+          color: $c-theme-primary;
+        }
+      }
+    }
+  }
+
+  @include media('tablet') {
+    .form-control {
+      padding-left: .24rem;
+      padding-right: .56rem;
+    }
+
+    .search-btn {
+      justify-content: flex-start;
+    }
+  }
+}

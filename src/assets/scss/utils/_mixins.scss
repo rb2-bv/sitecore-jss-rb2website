@@ -1,0 +1,139 @@
+/* Mixins
+   ========================================================================== */
+
+/**
+ * Media query breakpoints (https://github.com/eduardoboucas/include-media)
+*/
+
+@mixin media($breakpoint) {
+  $raw-query: map-get($breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(type-of($raw-query) == "string", unquote($raw-query), inspect($raw-query));
+
+    @media #{ $query } {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "No value found for `#{$breakpoint}`. "+"Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+/**
+ * Truncates text and adds an ellipsis to represent overflow.
+*/
+
+@mixin ellipsis($width: 100%, $display: block) {
+  display: $display;
+  max-width: $width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+@mixin multiline-ellipsis($line: 2, $line-height: 1.5) {
+  -webkit-box-orient: vertical;
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  line-height: $line-height;
+  max-height: ($line * $line-height) * 1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/**
+ * Form placeholder
+*/
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-ms-input-placeholder') {
+    @content;
+  }
+}
+
+/**
+ * Set CSS Plus
+*/
+
+@mixin setPlus($height: .02rem, $width: .1rem, $bgColor: $c-theme-primary) {
+  position: relative;
+
+  &::before,
+  &::after {
+    background-color: $bgColor;
+    content: '';
+    display: block;
+    height: $height;
+    left: 50%;
+    margin-left: (-($width/2));
+    margin-top: (-($height/2));
+    position: absolute;
+    top: 50%;
+    width: $width;
+  }
+
+  &::after {
+    transform: rotate(90deg);
+  }
+}
+
+/**
+ * Set CSS Arrow
+*/
+
+@mixin setArrow($direction: left, $arrowsize: .12rem, $borderColor: $c-theme-primary, $borderWidth: .02rem) {
+  border-color: $borderColor;
+  border-style: solid;
+  border-width: $borderWidth $borderWidth 0 0;
+  display: inline-block;
+  height: $arrowsize;
+  width: $arrowsize;
+
+  @if $direction == up {
+    transform: matrix(.71, -.71, .71, .71, 0, 0); /* rotate(-45deg) */
+  }
+
+  @if $direction == right {
+    position: relative;
+    top: -2px;
+    transform: matrix(.71, .71, -.71, .71, 0, 0); /* rotate(45deg); */
+  }
+
+  @if $direction == down {
+    position: relative;
+    top: -3px;
+    transform: matrix(-.71, .71, -.71, -.71, 0, 0); /* rotate(135deg); */
+  }
+
+  @if $direction == left {
+    position: relative;
+    top: -2px;
+    transform: matrix(-.71, -.71, .71, -.71, 0, 0); /* rotate(-135deg); */
+  }
+}

@@ -1,0 +1,172 @@
+/* Box
+   ========================================================================== */
+
+.box {
+  padding-bottom: ($gap-s*1.5);
+  padding-top: ($gap-s*1.5);
+
+  &--green-bg {
+    background-color: $c-box-bg-green;
+  }
+
+  &--blue-bg {
+    background-color: $c-box-bg-blue;
+  }
+
+  &--light-green-bg {
+    background-color: $c-box-bg-green-light;
+  }
+
+  &--light-gray-bg {
+    background-color: $c-box-bg-gray-lighter;
+  }
+
+  &__row {
+    padding-bottom: $gap-s;
+    padding-top: $gap-s;
+
+    &:not(:first-of-type) {
+      border-top: .01rem solid rgba(0, 0, 0, .15);
+    }
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+
+    dl {
+      margin-bottom: 0;
+    }
+  }
+
+  .item-label {
+    margin-bottom: .2rem;
+
+    &__icon {
+      display: inline-block;
+
+      img {
+        height: .4rem;
+        width: .4rem;
+      }
+    }
+
+    &__title {
+      display: inline-block;
+      font-size: .16rem;
+      font-weight: 700;
+    }
+  }
+
+  .item-name {
+    display: inline-block;
+    font-size: .12rem;
+    font-weight: 400;
+    line-height: 1.2;
+    padding: .02rem 0;
+    text-transform: uppercase;
+  }
+
+  .item-value {
+    display: inline-block;
+    font-size: .16rem;
+    margin-bottom: .12rem;
+  }
+
+  .project-manager-box {
+    .more-info {
+      border-bottom: 1px solid rgba(0, 0, 0, .15);
+
+      .link-holder {
+        margin-bottom: .2rem;
+      }
+
+      .label {
+        font-size: .2rem;
+        font-weight: 600;
+      }
+
+      .avatar {
+        text-align: center;
+
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+
+    .person {
+      padding-bottom: .32rem;
+      padding-top: .16rem;
+      text-align: center;
+    }
+  }
+
+  @include media ('mobile') {
+    .project-manager-box {
+      &.multiple {
+        .more-info {
+          border-bottom: none;
+        }
+
+        .person {
+          border-top: 1px solid rgba(0, 0, 0, .15);
+        }
+      }
+    }
+
+    &.text-large {
+      font-size: .24rem;
+    }
+  }
+
+  @include media ('tablet') {
+    .item-label,
+    .item-value {
+      margin-bottom: 0;
+    }
+
+    .project-manager-box {
+      &.multiple {
+        .person {
+          padding-left: 12%;
+          text-align: left;
+        }
+      }
+    }
+
+    &.text-large {
+      font-size: .32rem;
+    }
+  }
+
+  @include media ('desktop') {
+    padding-bottom: ($gap-s*3.5);
+    padding-top: ($gap-s*3.5);
+
+    .widget-title {
+      margin-bottom: .2rem;
+    }
+
+    .item-label {
+      &__icon {
+        margin-right: ($gap-s*3.5);
+      }
+    }
+
+    .project-manager-box {
+      .more-info {
+        .link-holder {
+          margin-bottom: .4rem;
+        }
+      }
+
+      .person {
+        padding-bottom: .16rem;
+      }
+    }
+
+    &.text-large {
+      font-size: .32rem;
+    }
+  }
+}

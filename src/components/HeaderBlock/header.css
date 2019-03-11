@@ -1,0 +1,13 @@
+.HeaderBlock_title, .HeaderBlock_subtitle {
+  font-size: .4rem;
+  line-height: .48rem;
+  color: #000;
+  font-size: .24rem;
+  line-height: .28rem;
+  margin: 0;
+  display: block;
+}
+
+.HeaderBlock_subtitle {
+  font-weight: 300;
+}

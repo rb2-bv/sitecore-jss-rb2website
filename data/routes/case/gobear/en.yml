@@ -1,0 +1,142 @@
+# This is a route layout definition.
+# The route definition defines which Sitecore components are present on a route,
+# what their content data is, and which _placeholder_ they are placed in.
+
+# This particular route definition is for the home route - '/', so it defines the
+# components shown on the initial page of the app.
+
+# You may use equivalent JSON files instead of YAML if you prefer;
+# however YAML is simpler to read and allows comments like this one :)
+
+# Setting an ID is optional, but it will allow referring to this item in internal links
+# the ID can be a app-wide-unique string, or a GUID value.
+id: case-go-bear
+
+# Route-level fields are appropriate for page level data like <title> contents
+# Define route level fields in /sitecore/definitions/routes.sitecore
+fields:
+  pageTitle: Case Detail | rb2
+# Define the page layout starting at the root placeholder - in this case, 'jss-main'
+# root placeholder names are defined in the package.json config section (required for Sitecore deployment)
+placeholders:
+  jss-main:
+  - componentName: HeaderBlock
+    fields:
+      heading: So many options
+      subheading: Make the right choice quickly
+      description: |
+        The name 'GoBear' originates from the company's motto, 'go bare or go home'. It's a funny way of explaining that
+        GoBear disrupts the financial sector by allowing consumers to compare financial products and insurance in one click.
+        Since 2015, GoBear has expanded to six countries in Asia, with its headquarters in Singapore. GoBear will continue
+        to expand across Asia in the years to come.
+
+  - componentName: FullWidthImage
+    fields:
+      image:
+        src: /data/media/img/banner_gobear.jpg
+        alt: gobear banner
+  - componentName: TechStack
+    fields:
+      heading: Tools & technologies
+    placeholders:
+      tech-stack-items:
+      - componentName: TechStackItem
+        fields:
+          icon:
+            src: /data/media/img/ic_technology.svg
+            alt: Technology icon
+          name: Technology
+        placeholders:
+          tech-stack-subitems:
+            - componentName: TechStackSubItem
+              fields:
+                name: frontend
+                content: Vue.js, Node.js, Drupal
+            - componentName: TechStackSubItem
+              fields:
+                name: backend
+                content: .NET core, Azure SQL, Azure Cosmos DB, Redis, Azure event hub
+            - componentName: TechStackSubItem
+              fields:
+                name: PROGRAMMING LANGUAGES
+                content: C#, PHP, JavaScript
+      - componentName: TechStackItem
+        fields:
+          icon:
+            src: /data/media/img/ic_services.svg
+            alt: Services icon
+          name: Services
+        placeholders:
+          tech-stack-subitems:
+            - componentName: TechStackSubItem
+              fields:
+                name: CI / CD
+                content: Atlassian Bamboo
+            - componentName: TechStackSubItem
+              fields:
+                name: SERVERS & HOSTING
+                content: Microsoft Azure, Docker (kubernetes)
+      - componentName: TechStackItem
+        fields:
+          icon:
+            src: /data/media/img/ic_technology.svg
+            alt: Tools & methodology icon
+          name: Tools & methodology
+        placeholders:
+          tech-stack-subitems:
+            - componentName: TechStackSubItem
+              fields:
+                name: QUALITY ASSURANCE
+                content: Selenium NightWatch
+            - componentName: TechStackSubItem
+              fields:
+                name: TOOLS
+                content: Atlassian Suite, Browser Stack, SonarQube
+            - componentName: TechStackSubItem
+              fields:
+                name: METHODOLOGY
+                content: Scaled scrum
+  - componentName: WidgetContainer
+    params:
+      cssClass: 'widget--content'
+    placeholders:
+      widget-content:
+      - componentName: ContentBlock
+        params:
+          cssClass: 'end-with-margin'
+        fields:
+          content: |
+            <div class="text-holder">
+              <h3 class="title">Our challenge</h3>
+              <div>
+                  <p>How do you ensure that consumers can quickly, easily and reliably compare hundreds of financial products and insurance policies,when the platform has to make complex calculations and the data has to be 100% accurate? How do you ensure that the enormous amounts of data are displayed quickly and smoothly? How do you ensure that multiple Scrum teams work on a Product Backlog and that the functionalities and improvements are scalable and immediately available for multiple countries?</p>
+              </div>
+            </div>
+            <div class="text-holder">
+              <h3 class="title">The result </h3>
+              <div>
+                  <p>GoBear has advised over 15 million users and processes 2 million monthly visitors to the website.&nbsp;They have compared over 2,700 prices and products in six financial categories (travel, car and health insurance, credit cards and personal and mortgage loans).&nbsp;</p>
+                  <ul>
+                    <li><em>In 2016, GoBear topped the ThinkwithGoogle list of comparison sites in the APAC region.</em>&nbsp;</li>
+                    <li><em>In 2017, GoBear Thailand received the prestigious Best Startup Award from the NTCC.</em>&nbsp;</li>
+                  </ul>
+              </div>
+            </div>
+            <div class="full-width-object">
+              <div class="full__img">
+                  <img src="https://rb2-website.cdn.prismic.io/rb2-website/7f27d57dc279ec6246d64338b23fe6e2c79ab25e_case_gobear.jpg" alt="image">
+                  <div>
+                    <p><a target="_blank" rel="noopener" href="https://www.gobear.com/">Visit the GoBear website</a></p>
+                  </div>
+              </div>
+            </div>
+            <div class="text-holder">
+              <h3 class="title">Our approach</h3>
+              <div>
+                  <p>For GoBear, rb2 provides full development and technical support in every phase of the development process.&nbsp;</p>
+                  <ul>
+                    <li>In the exploration phase, we facilitated cross-functional Scrum teams that work seamlessly together with GoBear for consultancy and development including product design, development and continuous product improvement.&nbsp;</li>
+                    <li>In the current expansion phase, we ensure that the architecture and tech stack remain up to date so that the development process continues to be extremely scalable and the Scrum teams' productivity continues to increase, enabling GoBear to build a strong presence in Asia.&nbsp;</li>
+                  </ul>
+              </div>
+            </div>

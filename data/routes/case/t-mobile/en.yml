@@ -1,0 +1,136 @@
+# This is a route layout definition.
+# The route definition defines which Sitecore components are present on a route,
+# what their content data is, and which _placeholder_ they are placed in.
+
+# This particular route definition is for the home route - '/', so it defines the
+# components shown on the initial page of the app.
+
+# You may use equivalent JSON files instead of YAML if you prefer;
+# however YAML is simpler to read and allows comments like this one :)
+
+# Setting an ID is optional, but it will allow referring to this item in internal links
+# the ID can be a app-wide-unique string, or a GUID value.
+id: case-t-mobile
+
+# Route-level fields are appropriate for page level data like <title> contents
+# Define route level fields in /sitecore/definitions/routes.sitecore
+fields:
+  pageTitle: Building a relationship | rb2
+# Define the page layout starting at the root placeholder - in this case, 'jss-main'
+# root placeholder names are defined in the package.json config section (required for Sitecore deployment)
+placeholders:
+  jss-main:
+  - componentName: HeaderBlock
+    fields:
+      heading: Building a relationship
+      subheading: Give loyal members a little extra
+      description: |
+        T-Mobile customers save points, which they can spend in the T-Mobile Extra Shop.
+        This online shop is full of great products and discount cards. You can also save
+        for call credit or discount on your invoice.T-Mobile asked marketing communication
+        agency Doornvogel to develop a loyalty programme, while rb2 provided the technology.
+        And it was a success: the application processes large numbers of orders and awards
+        points to over 70,000 members each day.
+
+  - componentName: FullWidthImage
+    fields:
+      image:
+        src: /data/media/img/banner_t-mobile.jpg
+        alt: meeting select banner
+  - componentName: TechStack
+    fields:
+      heading: Tools & technologies
+    placeholders:
+      tech-stack-items:
+      - componentName: TechStackItem
+        fields:
+          icon:
+            src: /data/media/img/ic_technology.svg
+            alt: Technology icon
+          name: Technology
+        placeholders:
+          tech-stack-subitems:
+            - componentName: TechStackSubItem
+              fields:
+                name: frontend
+                content: RESTful web api only (no front-end)
+            - componentName: TechStackSubItem
+              fields:
+                name: backend
+                content: ASP.NET core, Azure SQL Database & Cosmos DB
+            - componentName: TechStackSubItem
+              fields:
+                name: PROGRAMMING LANGUAGES
+                content: C#
+      - componentName: TechStackItem
+        fields:
+          icon:
+            src: /data/media/img/ic_services.svg
+            alt: Services icon
+          name: Services
+        placeholders:
+          tech-stack-subitems:
+            - componentName: TechStackSubItem
+              fields:
+                name: CI / CD
+                content: VisualStudio Team services
+            - componentName: TechStackSubItem
+              fields:
+                name: SERVERS & HOSTING
+                content: Microsoft Azure, Azure Fabric Services
+      - componentName: TechStackItem
+        fields:
+          icon:
+            src: /data/media/img/ic_technology.svg
+            alt: Tools & methodology icon
+          name: Tools & methodology
+        placeholders:
+          tech-stack-subitems:
+            - componentName: TechStackSubItem
+              fields:
+                name: QUALITY ASSURANCE
+                content: Visual Studio Unit Testing Framework
+            - componentName: TechStackSubItem
+              fields:
+                name: TOOLS
+                content: Atlassian Suite, Microsoft TFS
+            - componentName: TechStackSubItem
+              fields:
+                name: METHODOLOGY
+                content: Scrum (in a SAFe organization)
+  - componentName: WidgetContainer
+    params:
+      cssClass: 'widget--content'
+    placeholders:
+      widget-content:
+      - componentName: ContentBlock
+        params:
+          cssClass: 'end-with-margin'
+        fields:
+          content: |
+            <div class="text-holder">
+              <h3 class="title">Our challenge</h3>
+              <div>
+                  <p>One of our challenges was to link the APIs in the Azure environment to the extremely well protected T-Mobile network. It must also be extremely scalable, from just a few to large numbers of active members placing orders at the same time or checking their points balance when they open the T-Mobile app. T-Mobile had 7 years' worth of data and it was our job to transfer this error-free. In addition, each customer's points balance had to remain the same during migration.</p>
+              </div>
+            </div>
+            <div class="text-holder">
+              <h3 class="title">The result </h3>
+              <div>
+                <p>Over 1.2 million members are now using the platform and the number of users is set to increase even further over the coming year. Due to the extreme scalability, the platform runs without any problems .T-Mobile Extra offers an optimal customer experience through both the physical stores and the webshop, customer service and the app. There is an extensive webshop with a shopping basket and additional charge, a link to the cash registers in the shops and an extensive environment for T-Mobile customer service.</p>
+              </div>
+            </div>
+            <div class="full-width-object">
+              <div class="full__img">
+                  <img src="https://rb2-website.cdn.prismic.io/rb2-website/09cfff7404b8d4ad379789d94bc3ae9a5faeeb3c_case_screen-tmobile.jpg" alt="image">
+                  <div>
+                    <p><a target="_blank" rel="noopener" href="https://www.gobear.com/">Visit the GoBear website</a></p>
+                  </div>
+              </div>
+            </div>
+            <div class="text-holder">
+              <h3 class="title">Our approach</h3>
+              <div>
+                  <p>T-Mobile Extra was one of the first customers for which rb2 was able to implement a loyalty webshop in 2010. The webshop and the T-Mobile points application were replaced in 2017, and since then T-Mobile Extra has been running entirely through Loyalty Tools APIs: one of the three ways of integrating the loyalty programme.In implementing T-Mobile Extra, our Scrum team worked closely with the T-Mobile Scrum teams, partly on site.</p>
+              </div>
+            </div>

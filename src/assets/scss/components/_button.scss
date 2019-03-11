@@ -1,0 +1,120 @@
+/* Button
+   ========================================================================== */
+
+.btn {
+  background-color: $c-theme-primary;
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: $c-theme-white;
+  display: inline-block;
+  font-size: .16rem;
+  font-weight: 700;
+  height: $base-height;
+  line-height: .24rem;
+  padding: .12rem .32rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: middle;
+  min-width: 1.2rem;
+
+  @include ellipsis(100%, inline-block);
+
+  &:hover {
+    background-color: $c-theme-primary-dark;
+    color: $c-theme-white;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.small-font {
+    font-size: .14rem;
+    padding-left: .24rem;
+    padding-right: .24rem;
+  }
+
+  &--small {
+    font-size: .14rem;
+    height: $small-height;
+    padding: .08rem .24rem;
+  }
+
+  &--large {
+    display: block;
+    width: 100%;
+  }
+
+  &--green-border {
+    background-color: $c-theme-white;
+    border: .01rem solid $c-theme-primary;
+    color: $c-theme-black;
+    line-height: .22rem;
+
+    &:hover {
+      background-color: $c-theme-primary;
+      color: $c-theme-white;
+    }
+
+    &.nuxt-link-active {
+      background-color: $c-theme-primary;
+      color: $c-theme-white;
+
+      &:hover {
+        background-color: $c-theme-primary-dark;
+        color: $c-theme-white;
+      }
+    }
+  }
+
+  &--loading {
+    pointer-events: none !important;
+    position: relative;
+
+    &::before {
+      animation: loading-spin 1s linear infinite;
+      border: .04rem solid $c-theme-white;
+      border-radius: 50%;
+      border-top: .04rem solid $c-theme-primary;
+      box-sizing: border-box;
+      content: '';
+      display: block;
+      height: .26rem;
+      left: 50%;
+      margin-left: (-.13rem);
+      margin-top: (-.13rem);
+      position: absolute;
+      top: 50%;
+      width: .26rem;
+      z-index: 3;
+    }
+
+    &::after {
+      background-color: rgba(0, 0, 0, .4);
+      border-radius: .5rem;
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1;
+    }
+  }
+}
+
+button[role="button"], button.btn-less {
+  border: none;
+  outline: none;
+}
+
+@keyframes loading-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

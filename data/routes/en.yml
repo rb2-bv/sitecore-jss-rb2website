@@ -1,0 +1,195 @@
+# This is a route layout definition.
+# The route definition defines which Sitecore components are present on a route,
+# what their content data is, and which _placeholder_ they are placed in.
+
+# This particular route definition is for the home route - '/', so it defines the
+# components shown on the initial page of the app.
+
+# You may use equivalent JSON files instead of YAML if you prefer;
+# however YAML is simpler to read and allows comments like this one :)
+
+# Setting an ID is optional, but it will allow referring to this item in internal links
+# the ID can be a app-wide-unique string, or a GUID value.
+id: rb2-home-page
+
+# Route-level fields are appropriate for page level data like <title> contents
+# Define route level fields in /sitecore/definitions/routes.sitecore
+fields:
+  pageTitle: rb2 | Unlimited technological strength
+# Define the page layout starting at the root placeholder - in this case, 'jss-main'
+# root placeholder names are defined in the package.json config section (required for Sitecore deployment)
+placeholders:
+  jss-main:
+  - componentName: HeaderBlock
+    fields:
+      heading: Unlimited technological strength
+      subheading: behind digital success stories
+  - componentName: FullWidthImage
+    fields:
+      image:
+        src: /data/media/img/home_banner.jpg
+        alt: banner
+  - componentName: ColumnsContent
+    fields:
+      heading: Innovation and experience
+      subheading: applied in scalable applications
+    placeholders:
+      cols-content:
+      - componentName: ColumnContent
+        fields:
+          content: |
+            <p>
+              At digital development agency rb2, we love a challenge,
+              in any shape or form. Over the years, we have proven
+              ourselves in a number of specialisms. We are the expert
+              in the field of e-commerce platforms, meta-search solutions,
+              subscription models, loyalty solutions and re-platforming,
+              but we actually just thrive on any challenge. Our teams
+              help you to attain your ambition.
+            </p>
+          link:
+            href: /what-we-do
+            text: READ MORE ABOUT WHAT WE DO
+      - componentName: ColumnContent
+        fields:
+          content: |
+            <p>
+              rb2 is an Agile agency and uses frameworks such as
+              Scrum and Kanban. This makes us flexible and transparent,
+              and enables us to work effectively with your team.
+              Limitless digital ambitions, technical realisation; that
+              is what 90+ rb2 people in the Netherlands, China and Singapore
+              enjoy working towards on a daily basis.  Every day, we immerse
+              ourselves in your and other clients’ challenge to provide
+              solutions that go above and beyond the mission at hand.
+            </p>
+          link:
+            href: /how-we-do
+            text: READ MORE ABOUT HOW WE DO IT
+  - componentName: BannersContainer
+    fields:
+      heading: A selection of our work
+      subheading: Your idea can be as successful as these cases
+    placeholders:
+      banners:
+      - componentName: Banner
+        fields:
+          heading: Compare and select quickly and easily
+          subheading: The Asian insurance challenge!
+          logo:
+            src: /data/media/img/logo_gobear.svg
+            alt: gobear logo
+          image:
+            src: /data/media/img/banner_gobear.jpg
+            alt: gobear banner
+          link:
+            href: /case/gobear
+            text: View the case
+      - componentName: Banner
+        fields:
+          heading: Easily book locations
+          subheading: Meetings rooms quickly reserved
+          logo:
+            src: /data/media/img/logo_meetingselect.svg
+            alt: Meeting Select logo
+          image:
+            src: /data/media/img/banner_meetingselect.jpg
+            alt: Meeting Select banner
+          link:
+            href: /case/meeting-select
+            text: View the case
+      - componentName: Banner
+        fields:
+          heading: Building a relationship
+          subheading: Give loyal members a little extra
+          logo:
+            src: /data/media/img/logo_t-mobile.svg
+            alt: tmobile logo
+          image:
+            src: /data/media/img/banner_t-mobile.jpg
+            alt: tmobile banner
+          link:
+            href: /case/t-mobile
+            text: View the case
+  - componentName: BlogGrid
+    fields:
+      heading: An overview of our insights
+      subheading: wrapped in blog posts
+    placeholders:
+      blog-posts:
+      - componentName: BlogPostGridItem
+        fields:
+          articleType: news
+          heading: rb2 will be present at Vuejs Amsterdam
+          authorName: Pien Faijdherbe
+          link:
+            href: /news/rb2-present-at-vuejs-amsterdam
+          image:
+            src: /data/media/img/blog_vueconf.jpg
+          summary: |
+            From February 13 to 15, Vuejs will
+            take place in Amsterdam, the largest
+            conference for Vuejs
+      - componentName: BlogPostGridItem
+        fields:
+          articleType: blog
+          heading: The Kanban Cycle of Meetingselect
+          authorName: Sander de Zwart
+          link:
+            href: /blog/de-kanbancyclus-van-meetingselect
+          image:
+            src: /data/media/img/blog_kanban.jpg
+          summary: |
+            For our Agile work process, rb2
+            alternately uses Scrum and Kanban...
+      - componentName: BlogPostGridItem
+        fields:
+          articleType: blog
+          heading: The successful switch to Agile development 
+          authorName: Marco van den Bergh
+          link:
+            href: /blog/de-succesvolle-switch-naar-agile-development
+          image:
+            src: /data/media/img/blog_agile.jpg
+          summary: |
+            In the past, rb2 often worked according
+            to the Waterfall method. Did that always
+            go wrong? No...
+      - componentName: BlogPostGridItem
+        fields:
+          articleType: blog
+          heading: The artificial intelligence of Alibaba
+          authorName: Richard Birksteiner
+          link:
+            href: /blog/china-innovatieland-de-kunstmatige-intelligentie-van-alibaba
+          image:
+            src: /data/media/img/blog_ai.jpg
+          summary: |
+            It was once mainly known as a copy and
+            production country.Today, China is at
+            the forefront...
+      - componentName: BlogPostGridItem
+        fields:
+          articleType: news
+          heading: Subscription Factory and rb2 forge partnership
+          authorName: Pien Faijdherbe
+          link:
+            href: /news/subscription-factory-en-rb2-gaan-strategisch-partnership-aan
+          image:
+            src: /data/media/img/blog_sub_factory.jpg
+          summary: |
+            Subscription Factory and rb2 are pleased to
+            announce that they have formed a
+            strategic partnership...
+      - componentName: BlogPostGridItem
+        fields:
+          articleType: blog
+          heading: Smart marketers put their employees first
+          authorName: Nena Speets, Copywriter
+          link:
+            href: /blog/slimme-marketeers-plaatsen-de-klant-en-hun-eigen-medewerkers-centraal
+          image:
+            src: /data/media/img/blog_employee_first.jpg
+          summary: |
+            The blessings of online marketing are
+            presenting more and more drawbacks...

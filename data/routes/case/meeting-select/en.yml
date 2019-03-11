@@ -1,0 +1,134 @@
+# This is a route layout definition.
+# The route definition defines which Sitecore components are present on a route,
+# what their content data is, and which _placeholder_ they are placed in.
+
+# This particular route definition is for the home route - '/', so it defines the
+# components shown on the initial page of the app.
+
+# You may use equivalent JSON files instead of YAML if you prefer;
+# however YAML is simpler to read and allows comments like this one :)
+
+# Setting an ID is optional, but it will allow referring to this item in internal links
+# the ID can be a app-wide-unique string, or a GUID value.
+id: case-meeting-select
+
+# Route-level fields are appropriate for page level data like <title> contents
+# Define route level fields in /sitecore/definitions/routes.sitecore
+fields:
+  pageTitle: Meeting each other all over the world | rb2
+# Define the page layout starting at the root placeholder - in this case, 'jss-main'
+# root placeholder names are defined in the package.json config section (required for Sitecore deployment)
+placeholders:
+  jss-main:
+  - componentName: HeaderBlock
+    fields:
+      heading: Meeting each other all over the world
+      subheading: The right location, wherever you are
+      description: |
+        Booking meeting rooms online and managing those bookings.
+        Meetingselect introduced this in 2007, together with rb2,
+        and it is now one of the fastest growing companies in the Netherlands.
+        Meetingselect makes globally searching for and booking meeting and event
+        locations efficient and transparent. Meetingselect does this using technology
+        developed by rb2.
+
+  - componentName: FullWidthImage
+    fields:
+      image:
+        src: /data/media/img/banner_meetingselect.jpg
+        alt: meeting select banner
+  - componentName: TechStack
+    fields:
+      heading: Tools & technologies
+    placeholders:
+      tech-stack-items:
+      - componentName: TechStackItem
+        fields:
+          icon:
+            src: /data/media/img/ic_technology.svg
+            alt: Technology icon
+          name: Technology
+        placeholders:
+          tech-stack-subitems:
+            - componentName: TechStackSubItem
+              fields:
+                name: frontend
+                content: AngularJS
+            - componentName: TechStackSubItem
+              fields:
+                name: backend
+                content: .NET 4.5, Elasticsearch, MSSQL
+            - componentName: TechStackSubItem
+              fields:
+                name: PROGRAMMING LANGUAGES
+                content: C#, JavaScript
+      - componentName: TechStackItem
+        fields:
+          icon:
+            src: /data/media/img/ic_services.svg
+            alt: Services icon
+          name: Services
+        placeholders:
+          tech-stack-subitems:
+            - componentName: TechStackSubItem
+              fields:
+                name: CI / CD
+                content: VisualStudio Team services
+            - componentName: TechStackSubItem
+              fields:
+                name: SERVERS & HOSTING
+                content: Microsoft Azure
+      - componentName: TechStackItem
+        fields:
+          icon:
+            src: /data/media/img/ic_technology.svg
+            alt: Tools & methodology icon
+          name: Tools & methodology
+        placeholders:
+          tech-stack-subitems:
+            - componentName: TechStackSubItem
+              fields:
+                name: TOOLS
+                content: Atlassian Suite
+            - componentName: TechStackSubItem
+              fields:
+                name: METHODOLOGY
+                content: Kanban cycles
+  - componentName: WidgetContainer
+    params:
+      cssClass: 'widget--content'
+    placeholders:
+      widget-content:
+      - componentName: ContentBlock
+        params:
+          cssClass: 'end-with-margin'
+        fields:
+          content: |
+            <div class="text-holder">
+              <h3 class="title">Our challenge</h3>
+              <div>
+                  <p>Meetingselect finds solutions for PAs and secretaries who would otherwise spend a lot of time searching and booking locations for meetings and events.</p>
+              </div>
+            </div>
+            <div class="text-holder">
+              <h3 class="title">The result </h3>
+              <div>
+                <p>At the moment, there are approximately 500,000 meeting rooms that can be booked with over 100,000 providers. These providers vary from hotel chains and conference centres to unique locations such as castles, museums, meeting farms, country houses, golf clubs, design studios and ships. It is a huge platform that has been running smoothly for all kinds of users for years now. </p>
+                <p>The Meetingselect technology automates and supports the procurement process: from planning, budgeting, purchasing and visibility to measuring the results.</p>
+              </div>
+            </div>
+            <div class="full-width-object">
+              <div class="full__img">
+                  <img src="https://rb2-website.cdn.prismic.io/rb2-website/56898b0e2385ad76fdfc17fbf4753cce290c50b7_case_meetingselect.jpg" alt="image">
+                  <div>
+                    <p><a target="_blank" rel="noopener" href="https://www.gobear.com/">Visit the GoBear website</a></p>
+                  </div>
+              </div>
+            </div>
+            <div class="text-holder">
+              <h3 class="title">Our approach</h3>
+              <div>
+                  <p>rb2 has helped Meetingselect build the largest online meeting location search and booking tool from scratch. The rb2 team has been working on the application for over ten years now. The unique booking system is linked to a management information system that allows companies to easily view the costs of the meetings and events. In addition, the Meetingselect system makes it easier to comply with internal travel and meeting guidelines. </p>
+                  <p>The strength of the collaboration between Meetingselect and rb2 is that we use the latest technologies combined with insights from Meetingselect's personal, customer-oriented service. Besides constantly updating the platform with the latest technology, we also work together with Meetingselect on great components with partners such as the Dutch government, the Tax and Customs Administration and major Dutch banks. The Meetingselect application has a public API that is used by technology partners and travel agencies and is integrated with Google Places and WhatsApp. </p>
+              </div>
+            </div>

@@ -1,0 +1,98 @@
+/* Variables
+   ========================================================================== */
+
+/**
+ * Normalize
+*/
+
+$px-to-rem: (100px / 16px) * 100%; /* font-size:625% => 1rem = 100px */
+$font-size-root: $px-to-rem;
+$font-family-base: 'Roboto', 'Arial', sans-serif !default;
+$font-size-base: .16rem;
+$line-height-base: 1.5;
+$dt-font-weight: 400;
+$link-decoration: underline;
+$link-hover-decoration: none;
+$link-transition: all .3s ease;
+$table-cell-padding: .12rem;
+$cursor-disabled: not-allowed;
+
+/**
+ * Color
+*/
+
+/* Theme Color */
+$c-theme-default: rgba(0, 0, 0, .15) !default;
+$c-theme-primary: #77ad1a !default;
+$c-theme-primary-dark: #557d10 !default;
+$c-theme-success: #28a745 !default;
+$c-theme-warning: #ffc107 !default;
+$c-theme-danger: #dc3545 !default;
+$c-theme-white: #fff !default;
+$c-theme-black: #000 !default;
+$c-theme-orange: #f18e00 !default;
+$c-theme-gray: #c2c2c2 !default;
+
+/* Element theme color */
+$c-font-base: #000 !default;
+$c-bg-white: #fff !default;
+$c-bg-gray-light: #d9d9d9 !default;
+$c-bg-gray-lighter: #f2f2f2 !default;
+$c-bg-green: #00db54 !default;
+$c-bg-green-light: #acdd8b !default;
+$c-bg-blue: #1a85c8 !default;
+$c-box-shadow-gray-light: rgba(0, 0, 0, .05) !default;
+$c-border-gray: #dcdcdc !default;
+$c-placeholder: #c2c2c2 !default;
+
+$c-link: $c-theme-primary;
+$c-link-hover: $c-font-base;
+$c-nav-hover: $c-theme-primary-dark;
+$c-img-holder-bg: $c-theme-default;
+$c-widget-bg-gray-lighter: $c-bg-gray-lighter;
+$c-box-bg-green: $c-bg-green;
+$c-box-bg-green-light: $c-bg-green-light;
+$c-box-bg-blue: $c-bg-blue;
+$c-box-bg-gray-lighter: $c-bg-gray-lighter;
+
+/**
+ * Gap
+*/
+
+$gap-s: .16rem;
+$gap-m: .24rem;
+$gap-l: .32rem;
+
+/**
+ * Size
+*/
+
+$base-height: .48rem;
+$small-height: .4rem;
+$select-height: .4rem;
+
+/**
+ * Z-index
+*/
+
+$z-index-dropdown: 5000;
+$z-index-sticky: 7000;
+$z-index-sticky-over: 7020;
+$z-index-common-select-overlay: 7050;
+$z-index-common-select-options: 7100;
+$z-index-alert: 9000;
+$z-index-modal: 10000;
+
+/**
+ * Responsive Breakpoints
+*/
+
+$breakpoints: (
+  'mobile': 'only screen and (max-width: 767px)',
+  'tablet': 'only screen and (min-width: 768px)',
+  'desktop': 'only screen and (min-width: 1024px)',
+  'large': 'only screen and (min-width: 1366px)',
+  'xlarge': 'only screen and (min-width: 1920px)',
+  'onlyTablet': 'only screen and (min-width: 768px) and (max-width: 1023px)',
+  'noDesktop': 'only screen and (max-width: 1023px)'
+);
